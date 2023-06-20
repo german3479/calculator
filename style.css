@@ -25,6 +25,16 @@ body {
 }
 #calculatorDisplay {
     height: 123px;
+    border: 3.5px solid black;
+}
+#displayWindow {
+    width: 98%;
+    height: 95%;
+    margin: 3.5px auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    font-size: 46px;
 }
 #calculatorKeys {
     width: 300px;
@@ -43,8 +53,9 @@ body {
 }
 
 .key {
-    padding: 9px 18px;
+    padding: 7.5px 15px;
     border: none;
+    border-radius: 0.5px;
     width: 70px;
 }
 
@@ -52,15 +63,42 @@ body {
 .clearKey,
 .decimalKey {
     background: #ffffff;
+    transition: background-color 0.3s;
+}
+
+.numberKey:hover,
+.clearKey:hover,
+.decimalKey:hover {
+    background-color: #f2f2f2;
+}
+
+.numberKey:active,
+.clearKey:active,
+.decimalKey:active {
+    background-color: #e5e5e5;
 }
 
 .operatorKey {
     background: #f9f9f9;
+    transition: background-color 0.3s;
+}
+.operatorKey:hover {
+    background-color: #f1f1f1;
+}
+.operatorKey:active {
+    background-color: #eaeaea;
 }
 
 .equalsKey {
     font-size: "95px";
     background: #0067c0;
+    transition: background-color 0.3s;
     color: #DAE9F6;
     width: 100%;
+}
+.equalsKey:hover {
+    background-color: #2682d1;
+}
+.equalsKey:active {
+    background-color: #4a9de2;
 }
