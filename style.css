@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url("imgs/hill.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: cover;
+}
+#calculator {
+    display: flex;
+    flex-direction: column;
+    background: #f3f3f3;
+    width: 320px;
+    height: 530px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 7px;
+}
+#calculatorDisplay {
+    height: 123px;
+}
+#calculatorKeys {
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 3.7px;
+    flex-grow: 1 ;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: .2rem;
+}
+.buttonRow {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.key {
+    padding: 9px 18px;
+    border: none;
+    width: 70px;
+}
+
+.numberKey,
+.clearKey,
+.decimalKey {
+    background: #ffffff;
+}
+
+.operatorKey {
+    background: #f9f9f9;
+}
+
+.equalsKey {
+    font-size: "95px";
+    background: #0067c0;
+    color: #DAE9F6;
+    width: 100%;
+}
