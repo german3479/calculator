@@ -4,6 +4,7 @@ const operatorKey = document.querySelector(".operatorKey");
 const decimalKey = document.querySelector(".decimalKey");
 const clearKey = document.querySelector(".clearKey");
 const equalsKey = document.querySelector(".equalsKey");
+const backspaceKey = document.querySelector(".backspace");
 
 const errorMessages = [
   "Oops! Divide by zero",
@@ -37,8 +38,12 @@ function handleButtonClick(e) {
       operate();
     }
     operand = e.target.textContent;
+  } else if (e.target === decimalKey) {
+    handleDecimalInput();
   } else if (e.target === equalsKey) {
     operate();
+  } else if (e.target === backspaceKey) {
+    handleBackspace();
   }
 }
 
@@ -52,6 +57,8 @@ function handleKeyboardInput(e) {
     handleDecimalInput();
   } else if (key === 'Enter') {
     operate();
+  } else if (key === 'Backspace') {
+    handleBackspace();
   }
 }
 
@@ -74,10 +81,26 @@ function handleOperatorInput(key) {
 
 function handleDecimalInput() {
   if (!operand && !num1.includes('.')) {
+    if (num1 === '') {
+      num1 = '0';
+    }
     num1 += '.';
     displayContent.textContent = num1;
   } else if (operand && !num2.includes('.')) {
+    if (num2 === '') {
+      num2 = '0';
+    }
     num2 += '.';
+    displayContent.textContent = num2;
+  }
+}
+
+function handleBackspace() {
+  if (!operand) {
+    num1 = num1.slice(0, -1);
+    displayContent.textContent = num1;
+  } else {
+    num2 = num2.slice(0, -1);
     displayContent.textContent = num2;
   }
 }
